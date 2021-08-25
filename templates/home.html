@@ -1,0 +1,75 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<section class="vh-100">
+	<div class="container py-5 h-100">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+				<h4 class="fw-bold">Generador Problemas Matematicos</h4>
+				<p class="mb-4">Generador aleatorio de ejercicios matematicos simples, pensado
+					para niños de primaria / secundaria. El nombre del maestro, alumno y actividad
+					son totalmente opcionales, el resto de opciones son requeridos.
+                    </br>Creado por: <a href="https://github.com/R-V-L">R-V-L</a>
+				</p>
+				<form action="/download" method="POST" class="row g-3 needs-validation" novalidate>
+					<div class="col-md-6">
+						<label for="nombreMaestro" class="form-label">Nombre del maestro</label>
+						<input type="text" class="form-control" name="nombreMaestro"  id="nombreMaestro">
+					</div>
+					<div class="col-md-6">
+						<label for="nombreAlumno" class="form-label">Nombre del alumno</label>
+						<input type="text" class="form-control" name="nombreAlumno"  id="nombreAlumno">
+					</div>
+                    <div class="col-md-4">
+						<label for="nombreActividad" class="form-label">Nombre de actividad</label>
+						<input type="text" class="form-control" name="nombreActividad" id="nombreActividad">
+					</div>
+					<div class="col-md-4">
+						<label for="numeroEjercicios" class="form-label">Ejercicios a generar</label>
+						<input value="8" type="number" min="1" max="120" class="form-control" name="numeroEjercicios" id="numeroEjercicios" required>
+						<div class="invalid-feedback">
+							Ingresar un numero del 1 al 120
+						</div>
+					</div>
+					<div class="col-md-4">
+						<label for="complejidad" class="form-label">Complejidad</label>
+						<select class="form-select" name="complejidad" id="complejidad">
+							<option>1 - 9</option>
+							<option>1 - 99</option>
+							<option>1 - 999</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<label for="operacion" class="form-label">Operacion</label>
+						<select class="form-select" name="operacion" id="operacion">
+							<option>Todos</option>
+							<option>Suma</option>
+							<option>Resta</option>
+							<option>Multiplicacion</option>
+						</select>
+					</div>
+					<hr class="my-3">
+					<button class="btn btn-primary btn-lg btn-block" type="submit">Generar PDF</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- MDB -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script>
+	(function () {
+	  'use strict'
+	  var forms = document.querySelectorAll('.needs-validation')
+	
+	  Array.prototype.slice.call(forms)
+	    .forEach(function (form) {
+	      form.addEventListener('submit', function (event) {
+	        if (!form.checkValidity()) {
+	          event.preventDefault()
+	          event.stopPropagation()
+	        }
+	
+	        form.classList.add('was-validated')
+	      }, false)
+	    })
+	})()
+</script>
