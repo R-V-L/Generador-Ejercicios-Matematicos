@@ -48,6 +48,8 @@ def download():
         config = asignar_valores(req)
         lpdf = main(config)
         response = make_response(lpdf)
+        if config["title"] == "":
+            config["title"] = "Actividad"
         response.headers.set('Content-Disposition', 'attachment', filename=f'{config["title"]}.pdf')
         response.headers.set('Content-Type', 'application/pdf')
         return response
