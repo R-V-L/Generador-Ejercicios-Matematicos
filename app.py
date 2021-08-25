@@ -52,4 +52,6 @@ def download():
         response.headers.set('Content-Type', 'application/pdf')
         return response
     return render_template('home.html')
-app.run()
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80)
