@@ -4,7 +4,7 @@ from generador import main
 app = Flask(__name__) 
 
 @app.route('/', methods=['GET', 'POST'])
-def home(): 
+async def home(): 
     return render_template('home.html')
 
 def asignar_valores(req):
@@ -42,7 +42,7 @@ config = {
     }
 
 @app.route("/download", methods=["GET", "POST"])
-def download():
+async def download():
     if request.method == "POST":
         req = request.form.to_dict()
         config = asignar_valores(req)
