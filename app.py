@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_file, make_response
 from generador import main
+import asyncio
 
 app = Flask(__name__) 
 
