@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, send_file, make_response
 from generador import main
-import asyncio
 
 app = Flask(__name__) 
 
 @app.route('/', methods=['GET', 'POST'])
-async def home(): 
+def home(): 
     return render_template('home.html')
 
 def asignar_valores(req):
@@ -43,7 +42,7 @@ config = {
     }
 
 @app.route("/download", methods=["GET", "POST"])
-async def download():
+def download():
     if request.method == "POST":
         req = request.form.to_dict()
         config = asignar_valores(req)
